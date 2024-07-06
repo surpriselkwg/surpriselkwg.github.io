@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>个人主页</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style type="text/css">
+/*设置超链接样式*/
+table {
+border-collapse: collapse;
+border-spacing: 0;
+}
+
+a {
+color: #5086a5;
+text-decoration: none;
+font-size: 12px;
+}
+
+a:hover {
+color: #5086a5;
+text-decoration: underline;
+font-size: 12px;
+}
+
+a:visited {
+color: #5086a5;
+font-size: 12px;
+}
+/*整个tab层居中，宽度为600px*/
+#tabDiv {
+width: 600px;
+margin: 1em auto;
+padding-bottom: 10px;
+border-right: #b2c9d3 1px solid;
+border-top: #b2c9d3 1px solid;
+border-left: #b2c9d3 1px solid;
+border-bottom: #b2c9d3 1px solid;
+background: #ffffff;
+}
+/*tab头的样式*/
+#tabsHead {
+padding-left: 0px;
+height: 26px;
+background-color: #e8f7fc;
+font-size: 1em;
+margin: 1px 0px 0px;
+color: #5086a5;
+line-height: 26px;
+}
+/*已选tab头（超链接）的样式*/
+.curtab {
+padding-top: 0px;
+padding-right: 10px;
+padding-bottom: 0px;
+padding-left: 10px;
+border-right: #b2c9d3 1px solid;
+font-weight: bold;
+float: left;
+cursor: pointer;
+background: #ffffff;
+}
+/*未选tab头（超链接）的样式*/
+.tabs {
+border-right: #c1d8e0 1px solid;
+padding-top: 0px;
+padding-right: 10px;
+padding-bottom: 0px;
+padding-left: 10px;
+font-weight: normal;
+float: left;
+cursor: pointer;
+}
+p {
+font-size: 12pt;
+text-indent: 2em;
+}
+li {
+border-bottom-style: solid;
+border-bottom-color: #EEE;
+border-bottom-width: thin;
+height: 25px;
+font-family: "宋体";
+font-size: 12pt;
+}
+</style>
+
+<script type="text/jscript"> 
+//显示tab（tabHeadId：tab头中当前的超链接；tabContentId要显示的层ID）
+function showTab(tabHeadId,tabContentId) 
+{
+//tab层
+var tabDiv = document.getElementById("tabDiv");
+//将tab层中所有的内容层设为不可见
+//遍历tab层下的所有子节点
+var taContents = tabDiv.childNodes;
+for(i=0; i<taContents.length; i++) 
+{
+//将所有内容层都设为不可见
+if(taContents[i].id!=null && taContents[i].id != 'tabsHead')
+{
+taContents[i].style.display = 'none';
+}
+}
+//将要显示的层设为可见
+document.getElementById(tabContentId).style.display = 'block'; 
+//遍历tab头中所有的超链接
+var tabHeads = document.getElementById('tabsHead').getElementsByTagName('a');
+for(i=0; i<tabHeads.length; i++) 
+{ 
+//将超链接的样式设为未选的tab头样式
+tabHeads[i].className='tabs'; 
+}
+//将当前超链接的样式设为已选tab头样式
+document.getElementById(tabHeadId).className='curtab';
+document.getElementById(tabHeadId).blur();
+}
+</script>
+</head>
+
+<body>
+<div style="width: 100%; font-family: 微软雅黑; text-align: center; font-size: 20pt;">海绵宝宝个人主页</div>
+
+<div id="tabDiv" style="width: 1000px">
+
+<div id="tabsHead">
+<a id="tabs1" class="curtab" href="javascript:showTab('tabs1','tabContent1')">基本资料</a> <a id="tabs2" class="tabs" href="javascript:showTab('tabs2','tabContent2')">获奖记录</a><a id="tabs3" class="tabs" href="javascript:showTab('tabs3','tabContent3')">社会影响与文化贡献</a>
+</div>
+
+<div id="tabContent1" style="display: block">
+<table style="border-width: 0; width: 100%">
+<tr>
+<td rowspan="3" style="width: 300px; text-align: center"><img alt="姚明" src="images/海绵宝宝.jpg" style="width: 280px" /></td>
+<td colspan="3" rowspan="3">
+<table border="1" style="border-left-color: aqua; border-bottom-color: aqua; width: 701px; border-top-style: solid; border-top-color: aqua; border-right-style: solid; border-left-style: solid; height: 380px; border-right-color: aqua; border-bottom-style: solid">
+<tr>
+<td style="width: 50%">姓名：海绵宝宝</td>
+<td style="width: 50%">生日：1986年7月14日</td>
+</tr>
+<tr>
+<td style="width: 50%">国籍：美国</td>
+<td style="width: 50%">出生地：卡利姆诺斯岛</td>
+</tr>
+<tr>
+<td style="width: 50%; height: 29px">身高：10cm</td>
+<td style="width: 50%; height: 29px">体重：150g</td>
+</tr>
+<tr>
+<td style="width: 50%">血型：海绵型</td>
+</tr>
+<tr>
+<td colspan="2">
+<p> 教育背景：海绵宝宝的教育主要来自于比基尼海滩的驾驶学校，虽然他多次尝试，但至今仍未能成功通过驾照考试。尽管如此，他在其他领域表现出极高的热情与学习能力，特别是在烹饪方面。</p>
+<p>职业经历：自动画开始以来，海绵宝宝一直在比基尼海滩的快餐店蟹堡王工作。他的工作职责包括：</p>
+<p>1.制作蟹堡王的招牌菜——蟹堡。</p>
+<p>2.管理厨房设备，确保食品安全与卫生。</p>
+<p>3.在需要时，承担额外职责，如处理顾客投诉、维持店面秩序等。</p>
+<p>技能与特长：</p>
+<p>厨艺： 海绵宝宝在制作快餐方面表现出色，尤其是蟹堡，他的手艺常常获得老板和顾客的赞赏。</p>
+<p>乐观： 他以其无与伦比的乐观态度处理各种生活中的挑战。</p>
+<p>社交能力： 海绵宝宝与比基尼海滩的居民保持良好关系，无论是与最好的朋友派大星，还是与竞争对手如章鱼哥。</p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+</table>
+</div>
+<!--以下为获奖记录部分内容-->
+<div id="tabContent2" style="display: none">
+<ul>
+<li>“最佳员工奖”，蟹堡王餐厅年度表彰，连续五年获得此殊荣。</li>
+<li>“海洋保护英雄奖”，由比基尼海滩环保组织颁发，表彰其在保护海洋环境方面的贡献。</li>
+<li>“创意厨艺大奖”，海洋美食节中获得，针对其独创的“海藻味噌煎饼”。</li>
+<li>“优秀公民奖”，比基尼海滩市政府授予，以表彰其对社区的积极参与和贡献。</li>
+<li>“最佳着装奖”，万圣节装扮大赛中凭借“超级海绵宝宝”造型赢得第一名。</li>
+</ul>
+</div>
+<!--以下为社会影响与文化贡献部分内容-->
+<div id="tabContent3" style="display: none">
+<ul>
+<li>作为一个文化标志，海绵宝宝不仅在儿童中极受欢迎，也赢得了成人观众的喜爱。他的形象被广泛用于各种商业产品，如玩具、服装和视频游戏，同时他也是各种公益活动的形象大使。海绵宝宝的故事和经历不仅仅在动画中以幽默诙谐的方式展现，他还经常出现在各类特别节目和电影中，展示他那无尽的乐观和善良。他的形象代表了永不放弃和永远保持乐观的生活态度，成为了许多人心目中的英雄和榜样。</li>
+<br/>
+</ul>
+</div>
+</div>
+<hr />
+<div style="text-align: center; width: 100%; font-size: 12px; color: #333;">&copy;版权所有：海绵宝宝文案编写人————杨京霖</div>
+</body>
+</html>
